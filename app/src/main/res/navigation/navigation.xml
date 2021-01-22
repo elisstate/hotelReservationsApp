@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="ro.cs.pub.systems.hotel.reservations.app.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_calendarReservations"
+            app:destination="@id/calendarReservations" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarReservations"
+        android:name="ro.cs.pub.systems.hotel.reservations.app.CalendarReservations"
+        android:label="CalendarReservations"
+        tools:layout="@layout/fragment_calendar_reservations" />
+
+</navigation>

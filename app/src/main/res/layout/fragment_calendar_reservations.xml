@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+        <data>
+        <variable
+            name="reservationTrackerViewModel"
+            type="ro.cs.pub.systems.hotel.reservations.app.DayReservationsViewModel" />
+        </data>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+                <com.applandeo.materialcalendarview.CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="391dp">
+
+
+                </com.applandeo.materialcalendarview.CalendarView>
+
+                <Button
+                    android:id="@+id/addReservation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="10dp"
+                    android:text="@string/addReservation" />
+
+        </LinearLayout>
+</layout>

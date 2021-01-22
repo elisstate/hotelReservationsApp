@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="reservationViewModel"
+            type="ro.cs.pub.systems.hotel.reservations.app.DayReservationsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".NewReservationFormFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/add_a_new_reservation"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/newClientName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="Client's name"
+            android:text="@={reservationViewModel.clientName}" />
+
+        <EditText
+            android:id="@+id/newPhoneNumber"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Client's phone number"
+            android:inputType="text"
+            android:text="@={reservationViewModel.phoneNumber}" />
+
+        <EditText
+            android:id="@+id/newCheckinDate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Check-in Date"
+            android:inputType="datetime" />
+
+        <EditText
+            android:id="@+id/newCheckOutDate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Check-out Date"
+            android:inputType="datetime" />
+
+        <EditText
+            android:id="@+id/newOtherInfo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:ems="10"
+            android:hint="Other Informations"
+            android:inputType="textMultiLine"
+            android:text="@={reservationViewModel.otherInfo}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/divider"
+            android:orientation="horizontal"
+            android:showDividers="middle">
+
+
+            <Button
+                android:id="@+id/closeNewReservation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/close" />
+
+            <Button
+                android:id="@+id/createNewReservation"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:text="@string/addNewReservation"
+                android:onClick="@{()->reservationViewModel.save()}"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
